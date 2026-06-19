@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="ka" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" id="meta-theme-color">
+    <title>სტილის სივრცე — ქობულეთი | ტანსაცმელი, ფეხსაცმელი, ბავშვთა მოდა</title>
+    <meta name="description" content="სტილის სივრცე — ქობულეთის მოდის მაღაზია. ქალის, კაცის და ბავშვთა ტანსაცმელი, adidas, Levis, Zara.">
+    <meta name="keywords" content="ტანსაცმელი ქობულეთი, მოდა საქართველო, ადიდასი, ლევისი, ზარა, ქალის კაბები, ბავშვთა ტანსაცმელი">
+    <meta property="og:title" content="სტილის სივრცე — ქობულეთი">
+    <meta property="og:description" content="ახალი კოლექციები. დიდი არჩევანი. ხელმისაწვდომი ფასები.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* =========================================================
+           TOKENS
+           ========================================================= */
+        :root {
+            --color-ink:        #0D0D0D;
+            --color-smoke:      #1A1A1A;
+            --color-graphite:   #2E2E2E;
+            --color-steel:      #6B6B6B;
+            --color-stone:      #ABABAB;
+            --color-fog:        #D9D9D9;
+            --color-paper:      #F5F5F3;
+            --color-white:      #FFFFFF;
+            --color-accent:     #C9A84C;
+            --color-accent-dim: #8C7235;
+            --color-success:    #2E7D32;
+            --color-badge-sale: #1A1A1A;
+
+            --bg-primary:    var(--color-white);
+            --bg-secondary:  var(--color-paper);
+            --text-primary:  var(--color-ink);
+            --text-secondary:var(--color-steel);
+            --border-color:  var(--color-fog);
+            --card-bg:       var(--color-white);
+            --nav-bg:        rgba(255,255,255,0.95);
+            --overlay-bg:    rgba(0,0,0,0.55);
+
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body:    'Inter', sans-serif;
+
+            --text-xs:   clamp(0.72rem,1.8vw,0.8125rem);
+            --text-sm:   clamp(0.85rem,2vw,0.9375rem);
+            --text-base: clamp(1rem,2.2vw,1.0625rem);
+            --text-md:   clamp(1.1rem,2.5vw,1.25rem);
+            --text-lg:   clamp(1.2rem,3vw,1.5rem);
+            --text-xl:   clamp(1.4rem,4vw,1.875rem);
+            --text-2xl:  clamp(1.7rem,5vw,2.5rem);
+            --text-3xl:  clamp(2.1rem,6vw,3.5rem);
+            --text-hero: clamp(2.4rem,8vw,5rem);
+
+            --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;
+            --sp-6:24px;--sp-8:32px;--sp-10:40px;--sp-12:48px;
+            --sp-16:64px;--sp-20:80px;--sp-24:96px;
+
+            --container-w: 1280px;
+            --header-h:    72px;
+
+            --dur-fast:   150ms;
+            --dur-base:   250ms;
+            --dur-slow:   400ms;
+            --dur-slower: 600ms;
+            --ease:  cubic-bezier(0.4,0,0.2,1);
+            --ease-d:cubic-bezier(0,0,0.2,1);
+
+            --z-nav:   1000;
+            --z-menu:  1100;
+            --z-modal: 1200;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary:    var(--color-smoke);
+            --bg-secondary:  var(--color-graphite);
+            --text-primary:  var(--color-white);
+            --text-secondary:var(--color-stone);
+            --border-color:  var(--color-graphite);
+            --card-bg:       var(--color-graphite);
+            --nav-bg:        rgba(26,26,26,0.97);
+            --color-badge-sale: var(--color-ink);
+        }
+
+        /* =========================================================
+           BASE
+           ========================================================= */
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{
+            font-family:var(--font-body);font-size:var(--text-base);
+            color:var(--text-primary);background:var(--bg-primary);
+            line-height:1.6;overflow-x:hidden;
+            transition:background var(--dur-base) var(--ease),color var(--dur-base) var(--ease);
+        }
+        img,svg{display:block;max-width:100%}
+        a{color:inherit;text-decoration:none}
+        button,input,select{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+        ul,ol{list-style:none}
+        h1,h2,h3,.font-display{font-family:var(--font-display);font-weight:300;line-height:1.2;letter-spacing:-0.01em}
+
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-accent);color:#fff;padding:var(--sp-2) var(--sp-4);z-index:10000;transition:top 0.2s}
+        .skip-link:focus{top:0}
+        :focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+        .eyebrow{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);font-weight:500;display:block;margin-bottom:var(--sp-2)}
+        .container{width:100%;max-width:var(--container-w);margin:0 auto;padding:0 var(--sp-4)}
+        @media(min-width:768px){.container{padding:0 var(--sp-8)}}
+        .section{padding:var(--sp-16) 0}
+        @media(min-width:1024px){.section{padding:var(--sp-24) 0}}
+
+        /* =========================================================
+           BUTTONS
+           ========================================================= */
+        .btn{
+            display:inline-flex;align-items:center;justify-content:center;
+            height:48px;padding:0 var(--sp-6);font-size:var(--text-sm);font-weight:500;
+            text-transform:uppercase;letter-spacing:0.05em;border:1px solid transparent;
+            transition:all var(--dur-base) var(--ease);min-width:48px;
+        }
+        .btn:active{transform:scale(0.98)}
+        .btn--primary{background:var(--color-accent);color:#fff;border-color:var(--color-accent)}
+        .btn--primary:hover{background:var(--color-accent-dim)}
+        .btn--ghost{border-color:var(--border-color);color:var(--text-primary)}
+        .btn--ghost:hover{border-color:var(--color-accent);color:var(--color-accent)}
+        .btn--ghost-gold{border-color:var(--color-accent);color:var(--color-accent)}
+        .btn--ghost-gold:hover{background:var(--color-accent);color:#fff}
+        .btn--full{width:100%}
+
+        .input,.textarea{
+            width:100%;min-height:48px;padding:0 var(--sp-4);font-size:16px;
+            background:var(--bg-primary);border:1px solid var(--border-color);
+            color:var(--text-primary);transition:border-color 0.2s;
+        }
+        .input:focus,.textarea:focus{border-color:var(--color-accent);outline:none}
+        .textarea{padding-top:var(--sp-3);min-height:120px;resize:vertical}
+
+        .icon{width:24px;height:24px;fill:currentColor}
+        .icon--stroke{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+        /* Reveal */
+        .reveal{opacity:0;transform:translateY(28px);transition:opacity var(--dur-slower) var(--ease-d),transform var(--dur-slower) var(--ease-d);will-change:opacity,transform}
+        .reveal.is-visible{opacity:1;transform:translateY(0)}
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+        .header{
+            position:fixed;top:0;left:0;width:100%;z-index:var(--z-nav);
+            height:var(--header-h);transition:all var(--dur-base) var(--ease);
+            background:transparent;border-bottom:1px solid transparent;
+        }
+        .header.is-scrolled{
+            background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+            border-bottom-color:var(--border-color);
+        }
+        .header--transparent{color:var(--color-white)}
+        .nav{display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 var(--sp-4);max-width:var(--container-w);margin:0 auto}
+        .logo{display:flex;align-items:center;gap:var(--sp-2);z-index:calc(var(--z-menu)+1);position:relative}
+        .logo__mark{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;color:var(--color-accent);line-height:1}
+        .logo__text{font-weight:600;font-size:var(--text-lg);letter-spacing:-0.02em}
+        .header.is-scrolled .logo__text{color:var(--text-primary)}
+
+        .nav__links{display:none}
+        @media(min-width:1024px){
+            .nav__links{display:flex;gap:var(--sp-8)}
+            .nav__link{font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.06em;position:relative;padding:var(--sp-2) 0;font-weight:500}
+            .nav__link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--color-accent);transition:width var(--dur-base) var(--ease)}
+            .nav__link:hover::after,.nav__link.is-active::after{width:100%}
+        }
+        .nav__actions{display:flex;align-items:center;gap:var(--sp-2);z-index:calc(var(--z-menu)+1);position:relative}
+        .action-btn{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background 0.2s}
+        .action-btn:hover{background:rgba(128,128,128,0.1)}
+        .action-btn--cta{display:none}
+        @media(min-width:768px){.action-btn--cta{display:inline-flex}}
+
+        .theme-toggle .moon{display:none}
+        [data-theme="dark"] .theme-toggle .sun{display:none}
+        [data-theme="dark"] .theme-toggle .moon{display:block}
+
+        /* Hamburger */
+        .hamburger{display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;padding:10px;z-index:calc(var(--z-menu)+1)}
+        @media(min-width:1024px){.hamburger{display:none}}
+        .hamburger span{display:block;width:100%;height:1.5px;background:currentColor;transition:transform 0.3s,opacity 0.3s}
+        html.menu-open .hamburger span:nth-child(1){transform:translateY(7.5px) rotate(45deg);background:var(--text-primary)}
+        html.menu-open .hamburger span:nth-child(2){opacity:0}
+        html.menu-open .hamburger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);background:var(--text-primary)}
+        html.menu-open .header{color:var(--text-primary)}
+
+        /* Mobile menu */
+        .mobile-menu{
+            position:fixed;inset:0;background:var(--bg-primary);z-index:var(--z-menu);
+            display:flex;flex-direction:column;padding:calc(var(--header-h)+var(--sp-8)) var(--sp-6) var(--sp-8);
+            transform:translateX(100%);transition:transform 0.35s var(--ease);visibility:hidden;
+        }
+        html.menu-open .mobile-menu{transform:translateX(0);visibility:visible}
+        .mobile-nav{flex:1;display:flex;flex-direction:column;gap:var(--sp-6);justify-content:center}
+        .mobile-nav__link{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;display:block;opacity:0;transform:translateY(20px);transition:opacity 0.3s,transform 0.3s}
+        html.menu-open .mobile-nav__link{opacity:1;transform:translateY(0)}
+        .mobile-nav__link:nth-child(1){transition-delay:0.1s}
+        .mobile-nav__link:nth-child(2){transition-delay:0.15s}
+        .mobile-nav__link:nth-child(3){transition-delay:0.2s}
+        .mobile-nav__link:nth-child(4){transition-delay:0.25s}
+        .mobile-nav__link:nth-child(5){transition-delay:0.3s}
+        .mobile-social{display:flex;gap:var(--sp-4);border-top:1px solid var(--border-color);padding-top:var(--sp-6);opacity:0;transition:opacity 0.3s 0.4s}
+        html.menu-open .mobile-social{opacity:1}
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+        .hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#0D0D0D;color:#fff;display:flex;align-items:center}
+        .hero__slider{position:absolute;inset:0;display:flex;width:300%;transition:transform 0.55s cubic-bezier(0.25,1,0.5,1)}
+        .hero__slide{width:33.333%;height:100%;position:relative}
+        .hero__bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:kenburns 12s ease-in-out infinite alternate;will-change:transform}
+        .hero__slide:nth-child(1) .hero__bg{background-image:url('https://i.pinimg.com/1200x/95/ac/6c/95ac6c111c24239a19f0bd19384f9f0b.jpg')}
+        .hero__slide:nth-child(2) .hero__bg{background-image:url('https://i.pinimg.com/1200x/33/02/cc/3302cc70a7f9fb743287024dec71327f.jpg')}
+        .hero__slide:nth-child(3) .hero__bg{background-image:url('https://i.pinimg.com/736x/93/3c/39/933c392bc057f6b2c7d2d61638826cfd.jpg')}
+        @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.06)}}
+        .hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.4) 100%)}
+        .hero__content{position:relative;z-index:10;width:100%;max-width:800px;padding:0 var(--sp-4);margin:var(--sp-10) auto 0;text-align:center}
+        .hero__eyebrow{color:var(--color-accent);margin-bottom:var(--sp-4)}
+        .hero__title{font-size:var(--text-hero);margin-bottom:var(--sp-4);text-shadow:0 4px 12px rgba(0,0,0,.3)}
+        .hero__text{font-size:var(--text-lg);font-weight:300;opacity:.9;margin-bottom:var(--sp-8);max-width:600px;margin-inline:auto}
+        .hero__actions{display:flex;flex-direction:column;gap:var(--sp-4);align-items:center;justify-content:center}
+        @media(min-width:480px){.hero__actions{flex-direction:row}}
+        .hero__controls{position:absolute;bottom:var(--sp-8);left:0;width:100%;display:flex;justify-content:center;gap:var(--sp-3);z-index:10}
+        .hero__dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);transition:all 0.3s;padding:0}
+        .hero__dot.is-active{background:var(--color-accent);transform:scale(1.2)}
+        .hero__progress{position:absolute;bottom:0;left:0;height:2px;background:rgba(255,255,255,.2);width:100%;z-index:10}
+        .hero__progress-bar{height:100%;background:var(--color-accent);width:0%;transform-origin:left}
+        .is-animating .hero__progress-bar{animation:loadBar 5s linear forwards}
+        @keyframes loadBar{from{width:0%}to{width:100%}}
+        .hero__scroll{position:absolute;bottom:var(--sp-16);left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:var(--sp-2);opacity:.7}
+        .hero__scroll svg{animation:bounce 2s infinite}
+        @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
+
+        /* =========================================================
+           MARQUEE
+           ========================================================= */
+        .marquee{background:var(--bg-secondary);border-block:1px solid var(--border-color);padding:var(--sp-3) 0;overflow:hidden;white-space:nowrap;display:flex}
+        .marquee__content{display:inline-flex;align-items:center;gap:var(--sp-8);font-size:var(--text-sm);letter-spacing:.15em;text-transform:uppercase;color:var(--text-secondary);animation:marquee 25s linear infinite}
+        .marquee:hover .marquee__content{animation-play-state:paused}
+        .marquee__sep{color:var(--color-accent)}
+        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+        /* =========================================================
+           SECTION HEADER
+           ========================================================= */
+        .section-header{text-align:center;margin-bottom:var(--sp-10)}
+        .section-header .eyebrow{color:var(--color-accent)}
+        .section-header h2{font-size:var(--text-3xl);margin-bottom:var(--sp-2)}
+        .section-header p{color:var(--text-secondary);max-width:500px;margin:0 auto}
+
+        /* =========================================================
+           CATEGORIES
+           ========================================================= */
+        .category-grid{
+            display:flex;gap:var(--sp-4);overflow-x:auto;scroll-snap-type:x mandatory;
+            -webkit-overflow-scrolling:touch;padding-bottom:var(--sp-4);
+            margin:0 calc(var(--sp-4)*-1);padding-inline:var(--sp-4);scrollbar-width:none;
+        }
+        .category-grid::-webkit-scrollbar{display:none}
+        @media(min-width:768px){.category-grid{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;scroll-snap-type:none;margin:0;padding-inline:0;padding-bottom:0}}
+        @media(min-width:1024px){.category-grid{grid-template-columns:repeat(4,1fr)}}
+        @media(min-width:1280px){.category-grid{grid-template-columns:repeat(5,1fr);gap:var(--sp-6)}}
+
+        .cat-card{
+            flex:0 0 calc(72vw - var(--sp-4));scroll-snap-align:center;
+            position:relative;aspect-ratio:4/5;overflow:hidden;display:block;
+            background:var(--card-bg);border-radius:4px;
+        }
+        @media(min-width:480px){.cat-card{flex:0 0 calc(55vw - var(--sp-4))}}
+        @media(min-width:768px){.cat-card{flex:auto}}
+        .cat-card__img{width:100%;height:100%;object-fit:cover;transition:transform var(--dur-slow) var(--ease)}
+        .cat-card:hover .cat-card__img{transform:scale(1.08)}
+        .cat-card__overlay{
+            position:absolute;inset:0;
+            background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.1) 60%,transparent 100%);
+            display:flex;flex-direction:column;justify-content:flex-end;padding:var(--sp-6);color:#fff;transition:background 0.3s;
+        }
+        .cat-card:hover .cat-card__overlay{background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.2) 60%,transparent 100%)}
+        .cat-card__title{font-size:var(--text-xl);font-weight:500;margin-bottom:var(--sp-1)}
+        .cat-card__count{font-size:var(--text-xs);color:rgba(255,255,255,.7);margin-bottom:var(--sp-3)}
+        .cat-card__link{font-size:var(--text-sm);font-weight:500;display:inline-flex;align-items:center;gap:var(--sp-2);text-transform:uppercase;letter-spacing:.05em;color:var(--color-accent)}
+        .cat-card__arrow{transform:translateX(-10px);opacity:0;transition:all 0.3s}
+        .cat-card:hover .cat-card__arrow{transform:translateX(0);opacity:1}
+
+        /* =========================================================
+           FILTER BAR
+           ========================================================= */
+        .filter-bar{
+            position:sticky;top:var(--header-h);z-index:calc(var(--z-nav)-1);
+            background:var(--bg-primary);border-bottom:1px solid var(--border-color);
+            padding:var(--sp-4) 0;margin-bottom:var(--sp-8);
+        }
+        .filter-container{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-4)}
+        .search-wrapper{position:relative;flex:1;max-width:400px}
+        .search-input{width:100%;height:48px;padding:0 var(--sp-4) 0 44px;background:var(--bg-secondary);border:none;border-radius:24px;font-size:var(--text-sm);color:var(--text-primary)}
+        .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-secondary)}
+        .search-input:focus{outline:2px solid var(--color-accent)}
+        .filter-controls{display:none;gap:var(--sp-4)}
+        @media(min-width:1024px){.filter-controls{display:flex}}
+        .filter-select{height:48px;padding:0 var(--sp-8) 0 var(--sp-4);background:transparent;border:1px solid var(--border-color);font-size:var(--text-sm);appearance:none;color:var(--text-primary)}
+        .select-wrapper{position:relative}
+        .select-wrapper::after{content:'▾';position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--text-secondary)}
+        .btn-filter-mobile{display:inline-flex}
+        @media(min-width:1024px){.btn-filter-mobile{display:none}}
+
+        /* =========================================================
+           PRODUCT GRID & CARDS
+           ========================================================= */
+        .product-grid{
+            display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-4);
+            margin-bottom:var(--sp-10);
+        }
+        @media(min-width:640px){.product-grid{gap:var(--sp-6)}}
+        @media(min-width:768px){.product-grid{grid-template-columns:repeat(3,1fr)}}
+        @media(min-width:1024px){.product-grid{grid-template-columns:repeat(4,1fr)}}
+
+        .product-card{
+            position:relative;display:flex;flex-direction:column;
+            background:var(--card-bg);border-radius:6px;overflow:hidden;
+            box-shadow:0 2px 8px rgba(0,0,0,.06);
+            transition:transform var(--dur-base) var(--ease),box-shadow var(--dur-base) var(--ease);
+        }
+        @media(min-width:1024px){
+            .product-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+        }
+        .product-card__image-wrap{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--bg-secondary)}
+        .product-card__img{width:100%;height:100%;object-fit:cover;transition:transform var(--dur-slow) var(--ease)}
+        .product-card:hover .product-card__img{transform:scale(1.05)}
+
+        .product-badge{
+            position:absolute;top:var(--sp-2);left:var(--sp-2);
+            background:var(--color-badge-sale);color:var(--color-accent);
+            font-size:var(--text-xs);font-weight:600;padding:3px 8px;border-radius:2px;
+            text-transform:uppercase;letter-spacing:.05em;z-index:2;
+        }
+        .product-badge--new{background:var(--color-success);color:#fff}
+
+        .product-wishlist{
+            position:absolute;top:var(--sp-2);right:var(--sp-2);width:44px;height:44px;
+            display:grid;place-items:center;color:var(--text-primary);background:var(--bg-primary);
+            border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.12);z-index:2;
+        }
+        .product-wishlist.is-active svg{fill:var(--color-accent);stroke:var(--color-accent)}
+
+        .product-quick-view{
+            position:absolute;bottom:0;left:0;width:100%;
+            background:rgba(255,255,255,.96);color:var(--color-ink);
+            text-align:center;padding:var(--sp-3);font-size:var(--text-sm);font-weight:500;
+            transform:translateY(100%);transition:transform 0.25s;backdrop-filter:blur(4px);z-index:2;
+            text-transform:uppercase;letter-spacing:.05em;border:none;
+        }
+        [data-theme="dark"] .product-quick-view{background:rgba(26,26,26,.96);color:#fff}
+        @media(min-width:1024px){.product-card:hover .product-quick-view{transform:translateY(0)}}
+        @media(max-width:1023px){.product-quick-view{display:none}}
+
+        .product-info{padding:var(--sp-3) var(--sp-3) var(--sp-4)}
+        .product-brand{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-secondary);margin-bottom:2px;display:block}
+        .product-title{
+            font-family:var(--font-display);font-size:var(--text-base);font-weight:600;
+            margin-bottom:var(--sp-3);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+            overflow:hidden;line-height:1.25;cursor:pointer;
+        }
+        .product-price-row{display:flex;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-3)}
+        .price{font-weight:600;font-size:var(--text-md);color:var(--text-primary)}
+        .price-old{color:var(--text-secondary);text-decoration:line-through;font-size:var(--text-sm)}
+        .product-buy-btn{margin:0 var(--sp-3) var(--sp-3)}
+
+        .load-more-wrap{text-align:center;margin-top:var(--sp-8)}
+        .empty-state{grid-column:1/-1;text-align:center;padding:var(--sp-20) 0;color:var(--text-secondary)}
+        .empty-state p{font-size:var(--text-lg);margin-bottom:var(--sp-2)}
+
+        /* =========================================================
+           PROMO BANNERS
+           ========================================================= */
+        .banners-grid{display:grid;gap:var(--sp-4)}
+        @media(min-width:768px){.banners-grid{grid-template-columns:2fr 1fr;grid-template-rows:repeat(2,250px)}}
+        .banner--large{grid-row:1/span 2}
+        .banner{
+            position:relative;overflow:hidden;min-height:200px;display:flex;
+            flex-direction:column;justify-content:center;padding:var(--sp-6);color:#fff;border-radius:4px;
+        }
+        .banner__bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;transition:transform 0.5s}
+        .banner:hover .banner__bg{transform:scale(1.05)}
+        .banner::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:1}
+        .banner__content{position:relative;z-index:2}
+        .banner--large .banner__content{max-width:400px}
+        .banner__accent{display:block;width:40px;height:2px;background:var(--color-accent);margin-bottom:var(--sp-4)}
+        .banner__title{font-size:var(--text-3xl);margin-bottom:var(--sp-2)}
+        .banner--large .banner__title{font-size:var(--text-hero);line-height:1;margin-bottom:var(--sp-4)}
+        .banner__subtitle{font-size:var(--text-sm);text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--sp-6)}
+        .banner__link{font-size:var(--text-sm);font-weight:500;color:var(--color-accent);text-transform:uppercase;display:inline-flex;align-items:center;gap:4px}
+        .banner--1 .banner__bg{background-color:#1A1A1A;background-image:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,.03) 10px,rgba(255,255,255,.03) 20px)}
+        .banner--2 .banner__bg{background-image:url('https://picsum.photos/600/400?random=201')}
+        .banner--3 .banner__bg{background-image:url('https://picsum.photos/600/400?random=202')}
+
+        /* =========================================================
+           FEATURES
+           ========================================================= */
+        .features{background:var(--bg-secondary)}
+        .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-6) var(--sp-4)}
+        @media(min-width:480px){.features-grid{grid-template-columns:repeat(3,1fr)}}
+        @media(min-width:1024px){.features-grid{grid-template-columns:repeat(6,1fr)}}
+        .feature-item{text-align:center}
+        .feature-icon{width:40px;height:40px;margin:0 auto var(--sp-4);color:var(--color-accent)}
+        .feature-title{font-size:var(--text-sm);font-weight:600;margin-bottom:var(--sp-2)}
+        .feature-desc{font-size:var(--text-xs);color:var(--text-secondary);line-height:1.4}
+
+        /* =========================================================
+           ABOUT
+           ========================================================= */
+        .about-layout{display:grid;gap:var(--sp-10);align-items:center}
+        @media(min-width:1024px){.about-layout{grid-template-columns:1fr 1fr;gap:var(--sp-16)}}
+        .about-img-wrap{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/5}
+        .about-img{width:100%;height:100%;object-fit:cover}
+        .about-content h2{font-size:var(--text-3xl);margin-bottom:var(--sp-6)}
+        .about-content p{color:var(--text-secondary);margin-bottom:var(--sp-4);font-size:var(--text-md)}
+        .stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-6);margin:var(--sp-8) 0;padding-top:var(--sp-8);border-top:1px solid var(--border-color)}
+        .stat-item h3{font-family:var(--font-display);font-size:var(--text-3xl);color:var(--color-accent);margin-bottom:var(--sp-1)}
+        .stat-item p{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.05em;margin:0}
+
+        /* =========================================================
+           TESTIMONIALS
+           ========================================================= */
+        .testimonials{background:var(--bg-secondary)}
+        .test-grid{display:flex;gap:var(--sp-6);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--sp-4);margin-inline:calc(var(--sp-4)*-1);padding-inline:var(--sp-4);scrollbar-width:none}
+        .test-grid::-webkit-scrollbar{display:none}
+        @media(min-width:1024px){.test-grid{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0}}
+        .test-card{flex:0 0 calc(85vw - var(--sp-4));scroll-snap-align:center;background:var(--card-bg);padding:var(--sp-8);border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+        @media(min-width:1024px){.test-card{flex:auto}}
+        .test-stars{margin-bottom:var(--sp-4);color:var(--color-accent);font-size:18px}
+        .test-quote{font-family:var(--font-display);font-size:var(--text-xl);font-style:italic;line-height:1.4;margin-bottom:var(--sp-6)}
+        .test-author{display:flex;align-items:center;gap:var(--sp-3);border-top:1px solid var(--border-color);padding-top:var(--sp-4)}
+        .test-avatar{width:40px;height:40px;border-radius:50%;background:var(--bg-secondary);display:grid;place-items:center;font-weight:600;color:var(--color-accent);border:1px solid var(--border-color);font-size:var(--text-md);flex-shrink:0}
+        .test-name{font-size:var(--text-sm);font-weight:600;display:block}
+        .test-meta{font-size:var(--text-xs);color:var(--text-secondary);display:flex;align-items:center;gap:4px}
+        .test-meta svg{width:12px;height:12px;fill:var(--color-success)}
+
+        /* =========================================================
+           GALLERY
+           ========================================================= */
+        .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+        @media(min-width:768px){.gallery-grid{grid-template-columns:repeat(4,1fr);gap:4px}}
+        .gallery-item{position:relative;aspect-ratio:1;overflow:hidden;background:var(--bg-secondary)}
+        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+        .gallery-item:hover img{transform:scale(1.05)}
+        .gallery-overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;color:#fff;gap:8px;font-weight:500}
+        .gallery-item:hover .gallery-overlay{opacity:1}
+        .gallery-cta{text-align:center;margin-top:var(--sp-8)}
+
+        /* =========================================================
+           CONTACT & FOOTER
+           ========================================================= */
+        .contact-footer-wrap{background:linear-gradient(to bottom,var(--bg-secondary),var(--bg-primary))}
+        .contact-grid{display:grid;gap:var(--sp-10);margin-bottom:var(--sp-16);justify-items:center;text-align:center}
+        .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-6);margin-bottom:var(--sp-8);max-width:800px;width:100%}
+        @media(max-width:600px){.info-grid{grid-template-columns:1fr}}
+        .info-item{display:flex;flex-direction:column;gap:var(--sp-2);align-items:center}
+        .info-item svg{color:var(--color-accent);width:24px;height:24px}
+        .info-item span{font-size:var(--text-sm);color:var(--text-secondary);line-height:1.4}
+        .map-wrap{width:100%;max-width:1000px;height:400px;border-radius:8px;overflow:hidden;border:1px solid var(--border-color);box-shadow:0 10px 30px rgba(0,0,0,.05);margin-bottom:var(--sp-10)}
+        @media(min-width:768px){.map-wrap{height:450px}}
+        .map-wrap iframe{width:100%;height:100%;border:0}
+
+        .footer{padding-top:var(--sp-16);border-top:1px solid var(--border-color);position:relative;overflow:hidden}
+        .footer-watermark{position:absolute;bottom:0;left:50%;transform:translateX(-50%);font-family:var(--font-display);font-size:18vw;font-weight:600;color:var(--text-primary);opacity:.02;line-height:.8;pointer-events:none;white-space:nowrap}
+        .footer-grid{display:grid;gap:var(--sp-10);position:relative;z-index:2;margin-bottom:var(--sp-12)}
+        @media(min-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1.5fr}}
+        .footer-col__title{font-size:var(--text-sm);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--sp-6)}
+        .footer-links{display:flex;flex-direction:column;gap:var(--sp-3)}
+        .footer-links a,.footer-links span{color:var(--text-secondary);font-size:var(--text-sm);transition:color 0.2s}
+        .footer-links a:hover{color:var(--color-accent)}
+        .social-row{display:flex;flex-direction:column;gap:var(--sp-4)}
+        .social-link{display:flex;align-items:center;gap:var(--sp-3);color:var(--text-secondary);font-size:var(--text-sm);transition:color 0.2s}
+        .social-link svg{width:24px;height:24px;fill:currentColor}
+        .social-link:hover.instagram{color:#E1306C}
+        .social-link:hover.facebook{color:#1877F2}
+        .social-link:hover.whatsapp{color:#25D366}
+        .footer-bottom{border-top:1px solid var(--border-color);padding:var(--sp-6) 0;display:flex;flex-direction:column;align-items:center;gap:var(--sp-4);text-align:center;position:relative;z-index:2}
+        @media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+        .copyright{font-size:var(--text-xs);color:var(--text-secondary)}
+        .agency{font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--text-secondary);display:flex;align-items:center;gap:8px}
+        .agency strong{color:var(--color-accent);font-weight:600}
+
+        /* =========================================================
+           OVERLAY & SHEETS
+           ========================================================= */
+        .overlay{position:fixed;inset:0;background:var(--overlay-bg);z-index:var(--z-modal);opacity:0;visibility:hidden;transition:all 0.3s;backdrop-filter:blur(4px)}
+        .overlay.is-active{opacity:1;visibility:visible}
+        .sheet{
+            position:fixed;bottom:0;left:0;width:100%;max-height:90vh;background:var(--bg-primary);
+            z-index:calc(var(--z-modal)+1);border-radius:20px 20px 0 0;padding:var(--sp-6);
+            transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.32,0.72,0,1);
+            overflow-y:auto;display:flex;flex-direction:column;
+        }
+        .sheet.is-active{transform:translateY(0)}
+        .sheet-handle{width:40px;height:4px;background:var(--border-color);border-radius:2px;margin:0 auto var(--sp-4)}
+        .sheet-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-6)}
+        .sheet-title{font-family:var(--font-display);font-size:var(--text-2xl)}
+        .sheet-close{padding:8px;background:var(--bg-secondary);border-radius:50%;display:grid;place-items:center}
+
+        .product-modal-content{display:flex;flex-direction:column;gap:var(--sp-6)}
+        @media(min-width:1024px){
+            .sheet--product{
+                top:50%;left:50%;bottom:auto;transform:translate(-50%,-40%) scale(0.95);
+                width:900px;max-width:95vw;border-radius:8px;padding:var(--sp-8);opacity:0;
+            }
+            .sheet--product.is-active{transform:translate(-50%,-50%) scale(1);opacity:1}
+            .sheet-handle{display:none}
+            .product-modal-content{flex-direction:row;gap:var(--sp-10)}
+            .pm-gallery,.pm-info{flex:1}
+        }
+        .pm-gallery{aspect-ratio:3/4;background:var(--bg-secondary);border-radius:4px;overflow:hidden}
+        .pm-gallery img{width:100%;height:100%;object-fit:cover}
+        .pm-brand{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.1em;color:var(--text-secondary);margin-bottom:var(--sp-2);display:block}
+        .pm-title{font-family:var(--font-display);font-size:var(--text-3xl);margin-bottom:var(--sp-4);line-height:1.1}
+        .pm-price-row{display:flex;align-items:center;gap:var(--sp-4);margin-bottom:var(--sp-6);padding-bottom:var(--sp-4);border-bottom:1px solid var(--border-color)}
+        .pm-price{font-size:var(--text-2xl);font-weight:600}
+        .pm-status{font-size:var(--text-sm);color:var(--color-success);display:flex;align-items:center;gap:4px}
+        .pm-section{margin-bottom:var(--sp-6)}
+        .pm-label{font-size:var(--text-sm);font-weight:500;margin-bottom:var(--sp-3);display:block}
+        .size-selector{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+        .size-btn{border:1px solid var(--border-color);padding:8px 16px;border-radius:4px;font-size:var(--text-sm);background:transparent;cursor:pointer;color:var(--text-primary)}
+        .size-btn.is-active{border-color:var(--color-accent);background:var(--bg-secondary);font-weight:600}
+        .color-selector{display:flex;gap:var(--sp-3)}
+        .color-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-color);padding:2px;background:transparent;cursor:pointer}
+        .color-btn-inner{width:100%;height:100%;border-radius:50%;display:block}
+        .color-btn.is-active{outline:2px solid var(--color-accent);outline-offset:2px}
+        .pm-desc{font-size:var(--text-sm);color:var(--text-secondary);line-height:1.6}
+
+        /* Purchase options */
+        .purchase-options{display:flex;flex-direction:column;gap:var(--sp-3)}
+        .po-btn{display:flex;align-items:center;gap:var(--sp-4);padding:var(--sp-4);border:1px solid var(--border-color);border-radius:8px;text-align:left;transition:all 0.2s;min-height:72px;background:transparent;width:100%;cursor:pointer}
+        .po-btn:hover{border-color:var(--color-accent);background:var(--bg-secondary)}
+        .po-icon{width:32px;height:32px;display:grid;place-items:center;border-radius:8px;color:#fff;flex-shrink:0}
+        .po-icon.whatsapp{background:#25D366}
+        .po-icon.instagram{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
+        .po-icon.facebook{background:#1877F2}
+        .po-icon.phone{background:var(--color-accent)}
+        .po-icon svg{width:20px;height:20px;fill:#fff}
+        .po-content{flex:1}
+        .po-title{font-weight:600;font-size:var(--text-base);display:block;margin-bottom:2px}
+        .po-desc{font-size:var(--text-xs);color:var(--text-secondary)}
+        .po-arrow{color:var(--color-accent);font-weight:500;font-size:var(--text-sm)}
+
+        /* Filter chips */
+        .filter-chips{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+        .filter-chip{padding:8px 16px;border:1px solid var(--border-color);border-radius:20px;font-size:var(--text-sm);background:transparent;color:var(--text-primary);cursor:pointer}
+        .filter-chip.is-active{background:var(--color-accent);color:#fff;border-color:var(--color-accent)}
+
+        /* Mobile CTA */
+        .mobile-cta-bar{
+            position:fixed;bottom:0;left:0;width:100%;background:var(--bg-primary);
+            border-top:1px solid var(--border-color);padding:var(--sp-2) var(--sp-4);
+            padding-bottom:calc(var(--sp-2) + env(safe-area-inset-bottom));
+            display:flex;gap:var(--sp-2);z-index:calc(var(--z-nav)-2);
+            transform:translateY(100%);transition:transform 0.3s;
+        }
+        @media(min-width:768px){.mobile-cta-bar{display:none}}
+        .mobile-cta-bar.is-visible{transform:translateY(0)}
+        .mobile-cta-bar .btn{flex:1}
+        .mobile-cta-bar .btn-icon{flex:0 0 48px;padding:0}
+
+        /* Fade up animation */
+        @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+        /* =========================================================
+           MOBILE FIXES — centered & polished
+           ========================================================= */
+
+        /* ── About section ─────────────────────────────────────── */
+        @media(max-width:1023px){
+            .about-layout{text-align:center}
+            .about-content .eyebrow{display:block;text-align:center}
+            .about-content h2{text-align:center}
+            .about-content p{
+                text-align:center;
+                margin-left:auto;
+                margin-right:auto;
+                max-width:480px;
+            }
+            .stats-row{
+                justify-items:center;
+                grid-template-columns:repeat(2,1fr);
+                max-width:360px;
+                margin-left:auto;
+                margin-right:auto;
+                width:100%;
+            }
+            .stat-item{
+                text-align:center;
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+            }
+            .about-content .btn{
+                margin:0 auto;
+                display:block;
+                width:fit-content;
+            }
+        }
+
+        /* ── Features grid ──────────────────────────────────────── */
+        @media(max-width:479px){
+            .features-grid{
+                grid-template-columns:repeat(2,1fr);
+                gap:var(--sp-5) var(--sp-3);
+                justify-items:center;
+            }
+            .feature-item{
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                text-align:center;
+                padding:var(--sp-4) var(--sp-3);
+                background:var(--card-bg);
+                border-radius:10px;
+                width:100%;
+                box-shadow:0 2px 8px rgba(0,0,0,.04);
+            }
+        }
+        @media(min-width:480px) and (max-width:767px){
+            .features-grid{
+                grid-template-columns:repeat(3,1fr);
+                justify-items:center;
+            }
+            .feature-item{
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                text-align:center;
+            }
+        }
+
+        /* ── Promo banners ──────────────────────────────────────── */
+        @media(max-width:767px){
+            .banners-grid{
+                display:flex !important;
+                flex-direction:column;
+                gap:var(--sp-3);
+            }
+            .banner--large{
+                grid-row:auto;
+                min-height:220px;
+            }
+            .banner{
+                min-height:150px;
+                border-radius:10px;
+            }
+            .banner--large .banner__title{
+                font-size:clamp(1.8rem,6vw,2.5rem);
+            }
+            .banner--large .banner__content{
+                max-width:100%;
+            }
+            .banner__subtitle{
+                margin-bottom:var(--sp-4);
+            }
+        }
+
+        /* ── Stats numbers on mobile ────────────────────────────── */
+        @media(max-width:767px){
+            .stat-item h3{
+                font-size:clamp(1.8rem,7vw,2.5rem);
+            }
+            .stat-item p{
+                font-size:var(--text-xs);
+            }
+        }
+
+        /* ── Section headers on mobile ──────────────────────────── */
+        @media(max-width:767px){
+            .section-header{
+                padding:0 var(--sp-2);
+            }
+            .section-header h2{
+                font-size:clamp(1.6rem,6vw,2.2rem);
+            }
+        }
+
+        /* ── About image on mobile: landscape ratio + polish ─────── */
+        @media(max-width:1023px){
+            .about-img-wrap{
+                border-radius:12px;
+                box-shadow:0 12px 40px rgba(0,0,0,0.10);
+                max-height:340px;
+                aspect-ratio:16/9;
+            }
+        }
+    </style>
+</head>
+<body>
+<a href="#main" class="skip-link">შინაარსზე გადასვლა</a>
+
+<!-- HEADER -->
+<header class="header header--transparent" id="header">
+    <div class="nav">
+        <button class="hamburger" id="menu-toggle" aria-label="მენიუს გახსნა">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="#" class="logo">
+            <span class="logo__mark">სს</span>
+            <span class="logo__text">სტილის სივრცე</span>
+        </a>
+        <nav class="nav__links" aria-label="მთავარი ნავიგაცია">
+            <a href="#categories" class="nav__link">კატეგორიები</a>
+            <a href="#products" class="nav__link">კოლექცია</a>
+            <a href="#about" class="nav__link">ჩვენს შესახებ</a>
+            <a href="#contact" class="nav__link">კონტაქტი</a>
+        </nav>
+        <div class="nav__actions">
+            <button class="action-btn" aria-label="ძებნა" onclick="document.querySelector('.search-input').focus()">
+                <svg class="icon icon--stroke" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+            <button class="action-btn theme-toggle" id="theme-toggle" aria-label="თემის შეცვლა">
+                <svg class="icon icon--stroke sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <svg class="icon icon--stroke moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="btn btn--ghost-gold action-btn--cta" onclick="location.href='#contact'">კონტაქტი</button>
+        </div>
+    </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="მობილური ნავიგაცია">
+        <a href="#categories" class="mobile-nav__link">კატეგორიები</a>
+        <a href="#products" class="mobile-nav__link">კოლექცია</a>
+        <a href="#about" class="mobile-nav__link">ჩვენს შესახებ</a>
+        <a href="#contact" class="mobile-nav__link">კონტაქტი</a>
+    </nav>
+    <div class="mobile-social">
+        <a href="#" class="social-link instagram"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="#" class="social-link facebook"><svg viewBox="0 0 24 24" class="icon"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="social-link whatsapp"><svg viewBox="0 0 24 24" class="icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+    </div>
+</div>
+
+<main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero__slider" id="hero-slider">
+            <div class="hero__slide"><div class="hero__bg"></div></div>
+            <div class="hero__slide"><div class="hero__bg"></div></div>
+            <div class="hero__slide"><div class="hero__bg"></div></div>
+        </div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <span class="eyebrow hero__eyebrow">კოლექცია 2026</span>
+            <h1 class="hero__title">აღმოაჩინე შენი<br>უნიკალური სტილი</h1>
+            <p class="hero__text">ქალის, კაცის და ბავშვთა ტანსაცმელი · ფეხსაცმელი · ბრენდული კოლექციები — ყველაფერი ერთ სივრცეში, ქობულეთში.</p>
+            <div class="hero__actions">
+                <a href="#products" class="btn btn--primary">სრული კოლექცია</a>
+                <a href="#categories" class="btn btn--ghost header--transparent">კატეგორიები</a>
+            </div>
+        </div>
+        <div class="hero__controls" aria-label="სლაიდების კონტროლი">
+            <button class="hero__dot is-active" aria-label="სლაიდი 1"></button>
+            <button class="hero__dot" aria-label="სლაიდი 2"></button>
+            <button class="hero__dot" aria-label="სლაიდი 3"></button>
+        </div>
+        <div class="hero__progress is-animating" id="hero-progress"><div class="hero__progress-bar"></div></div>
+        <div class="hero__scroll" aria-hidden="true">
+            <span style="font-size:10px;text-transform:uppercase;letter-spacing:.1em">Scroll</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee__content">
+            ✦ adidas <span class="marquee__sep">·</span> Levi's <span class="marquee__sep">·</span> Zara <span class="marquee__sep">·</span> New Balance <span class="marquee__sep">·</span> სტილის სივრცე <span class="marquee__sep">·</span> ახალი კოლექცია <span class="marquee__sep">·</span> Birkenstock <span class="marquee__sep">·</span> Lacoste <span class="marquee__sep">·</span> ✦ adidas <span class="marquee__sep">·</span> Levi's <span class="marquee__sep">·</span> Zara <span class="marquee__sep">·</span> New Balance <span class="marquee__sep">·</span> სტილის სივრცე <span class="marquee__sep">·</span> ახალი კოლექცია <span class="marquee__sep">·</span> Birkenstock <span class="marquee__sep">·</span> Lacoste <span class="marquee__sep">·</span>
+        </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="section container" id="categories">
+        <header class="section-header reveal">
+            <span class="eyebrow">კატეგორიები</span>
+            <h2>რაც გაგიხარდება</h2>
+            <p>აღმოაჩინეთ სრულყოფილი ლუქი ნებისმიერი შემთხვევისთვის.</p>
+        </header>
+        <div class="category-grid reveal">
+            <a href="#products" class="cat-card" onclick="filterByCategory('ქალის კაბები')">
+                <img src="ქალის ტანსაცმელი/ქალის კაბები/ქალის კაბები (1).jpg" alt="ქალის კაბები" class="cat-card__img" loading="lazy" onerror="this.src='https://i.pinimg.com/1200x/93/75/ce/9375ce32c50b50bd00ce7e1bdad47cb7.jpg'">
+                <div class="cat-card__overlay">
+                    <h3 class="cat-card__title">ქალის კაბები</h3>
+                    <span class="cat-card__count">24 პროდუქტი</span>
+                    <span class="cat-card__link">იხილე მეტი <span class="cat-card__arrow">→</span></span>
+                </div>
+            </a>
+            <a href="#products" class="cat-card" onclick="filterByCategory('ქალის ორეულები')">
+                <img src="ქალის ტანსაცმელი/ქალის ორეულები/qalis oreulebi (1).jpg" alt="ქალის ორეულები" class="cat-card__img" loading="lazy" onerror="this.src='https://i.pinimg.com/1200x/1b/94/ec/1b94ec5fb9d13d09a8cec9edc0f0fade.jpg'">
+                <div class="cat-card__overlay">
+                    <h3 class="cat-card__title">ქალის ორეულები</h3>
+                    <span class="cat-card__count">15 პროდუქტი</span>
+                    <span class="cat-card__link">იხილე მეტი <span class="cat-card__arrow">→</span></span>
+                </div>
+            </a>
+            <a href="#products" class="cat-card" onclick="filterByCategory('ქალის ფეხსაცმელი')">
+                <img src="ქალის ფეხსაცმელი/zara 1.jpg" alt="ქალის ფეხსაცმელი" class="cat-card__img" loading="lazy" onerror="this.src='https://i.pinimg.com/1200x/0d/de/76/0dde761236b6e6fccaf772bd9e89f96c.jpg'">
+                <div class="cat-card__overlay">
+                    <h3 class="cat-card__title">ქალის ფეხსაცმელი</h3>
+                    <span class="cat-card__count">18 პროდუქტი</span>
+                    <span class="cat-card__link">იხილე მეტი <span class="cat-card__arrow">→</span></span>
+                </div>
+            </a>
+            <a href="#products" class="cat-card" onclick="filterByCategory('ბიჭის მაისურები')">
+                <img src="მამაკაცის ბიჭის ტანსაცმელი/ბიჭის მაისურები/ბიჭის მაისური (1).jpg" alt="ბიჭის მაისურები" class="cat-card__img" loading="lazy" onerror="this.src='https://i.pinimg.com/736x/f9/f0/61/f9f061ecbecd027e0da8cc0ddc85cf35.jpg'">
+                <div class="cat-card__overlay">
+                    <h3 class="cat-card__title">ბიჭის მაისურები</h3>
+                    <span class="cat-card__count">23 პროდუქტი</span>
+                    <span class="cat-card__link">იხილე მეტი <span class="cat-card__arrow">→</span></span>
+                </div>
+            </a>
+            <a href="#products" class="cat-card" onclick="filterByCategory('სპორტიულის ორეულები')">
+                <img src="სპორტული კოლექცია/სპორტიულის ორეულები/სპორტიულის ორეულები (1).jpg" alt="სპორტული კოლექცია" class="cat-card__img" loading="lazy" onerror="this.src='https://i.pinimg.com/736x/91/f7/36/91f7366eab0422c4755ad39582458005.jpg'">
+                <div class="cat-card__overlay">
+                    <h3 class="cat-card__title">სპორტული კოლექცია</h3>
+                    <span class="cat-card__count">13 პროდუქტი</span>
+                    <span class="cat-card__link">იხილე მეტი <span class="cat-card__arrow">→</span></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS & FILTER -->
+    <section class="section" style="padding-top:0" id="products">
+        <div class="filter-bar" id="filter-bar">
+            <div class="container filter-container">
+                <div class="search-wrapper">
+                    <svg class="icon icon--stroke search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="search" class="search-input" placeholder="ძებნა პროდუქტი..." id="search-input" aria-label="პროდუქტის ძებნა">
+                </div>
+                <button class="btn btn--ghost btn-filter-mobile" onclick="openFilterSheet()">
+                    <svg class="icon icon--stroke" viewBox="0 0 24 24" style="margin-right:6px"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                    ფილტრი
+                </button>
+                <div class="filter-controls">
+                    <div class="select-wrapper">
+                        <select class="filter-select" id="filter-category" aria-label="კატეგორიის ფილტრი">
+                            <option value="all">ყველა კატეგორია</option>
+                            <option value="ქალის კაბები">ქალის კაბები</option>
+                            <option value="ქალის ორეულები">ქალის ორეულები</option>
+                            <option value="ქალის მაისურები">ქალის მაისურები</option>
+                            <option value="ქალის შარვლები">ქალის შარვლები</option>
+                            <option value="ქალის კვედა ბოლოები">ქალის კვედა ბოლოები</option>
+                            <option value="გოგოს ტოპები">გოგოს ტოპები</option>
+                            <option value="ქალის ფეხსაცმელი">ქალის ფეხსაცმელი</option>
+                            <option value="ბიჭის მაისურები">ბიჭის მაისურები</option>
+                            <option value="Levi's-ის მაისურები">Levi's-ის მაისურები</option>
+                            <option value="ბიჭის ადიდასის ბოტასები">ბიჭის ბოტასი</option>
+                            <option value="სპორტიულის ორეულები">სპორტული კოლექცია</option>
+                        </select>
+                    </div>
+                    <div class="select-wrapper">
+                        <select class="filter-select" id="filter-sort" aria-label="დალაგება">
+                            <option value="default">ნაგულისხმევი</option>
+                            <option value="price-asc">ფასი: იაფიდან</option>
+                            <option value="price-desc">ფასი: ძვირიდან</option>
+                            <option value="new">ახალი პირველი</option>
+                            <option value="sale">ფასდაკლება</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <header class="section-header reveal" id="new">
+                <span class="eyebrow">კოლექცია 2026</span>
+                <h2>გამორჩეული პროდუქტები</h2>
+            </header>
+            <div class="product-grid" id="product-grid"></div>
+            <div class="load-more-wrap reveal">
+                <button class="btn btn--ghost" id="load-more-btn" style="display:none">მეტის ჩვენება</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMO BANNERS -->
+    <section class="section container">
+        <div class="banners-grid reveal">
+            <a href="#products" class="banner banner--large banner--1" onclick="filterByCategory('all')">
+                <div class="banner__bg"></div>
+                <div class="banner__content">
+                    <span class="banner__accent"></span>
+                    <h3 class="banner__title font-display">50% ფასდაკლება</h3>
+                    <p class="banner__subtitle">ზაფხულის კოლექცია</p>
+                    <span class="banner__link">ნახვა <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </div>
+            </a>
+            <a href="#products" class="banner banner--2" onclick="filterByCategory('ბიჭის მაისურები')">
+                <div class="banner__bg"></div>
+                <div class="banner__content">
+                    <h3 class="banner__title font-display">ახალი შემოსული</h3>
+                    <p class="banner__subtitle">MASSIMO DUTI</p>
+                    <span class="banner__link">ნახვა →</span>
+                </div>
+            </a>
+            <a href="#products" class="banner banner--3" onclick="filterByCategory('Levi\'s-ის მაისურები')">
+                <div class="banner__bg"></div>
+                <div class="banner__content">
+                    <h3 class="banner__title font-display" style="font-size:var(--text-xl)">Levi's სეზონური კოლექცია</h3>
+                    <span class="banner__link">ნახვა →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section features">
+        <div class="container features-grid reveal">
+            <div class="feature-item">
+                <svg class="feature-icon icon--stroke" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                <h3 class="feature-title">დიდი არჩევანი</h3>
+                <p class="feature-desc">ქალის, კაცის და ბიჭის ტანსაცმელი.</p>
+            </div>
+            <div class="feature-item">
+                <svg class="feature-icon icon--stroke" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <h3 class="feature-title">ხარისხიანი პროდუქცია</h3>
+                <p class="feature-desc">მხოლოდ რჩეული მასალები.</p>
+            </div>
+            <div class="feature-item">
+                <svg class="feature-icon icon--stroke" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.92-10.24l-3.27 3.27"/></svg>
+                <h3 class="feature-title">ახალი კოლექციები</h3>
+                <p class="feature-desc">რეგულარული განახლება.</p>
+            </div>
+            <div class="feature-item">
+                <svg class="feature-icon icon--stroke" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                <h3 class="feature-title">ხელმისაწვდომი ფასები</h3>
+                <p class="feature-desc">საუკეთესო ფასი რეგიონში.</p>
+            </div>
+            <div class="feature-item">
+                <svg class="feature-icon icon--stroke" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <h3 class="feature-title">მეგობრული მომსახურება</h3>
+                <p class="feature-desc">ჩვენი გუნდი მუდამ მზადაა.</p>
+            </div>
+            <div class="feature-item">
+                <svg class="feature-icon icon--stroke" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <h3 class="feature-title">სწრაფი კომუნიკაცია</h3>
+                <p class="feature-desc">WhatsApp, FB და Instagram.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section container" id="about">
+        <div class="about-layout">
+            <div class="about-img-wrap reveal">
+                <img src="https://picsum.photos/600/700?random=20" alt="მაღაზიის ინტერიერი" class="about-img" loading="lazy">
+            </div>
+            <div class="about-content reveal">
+                <span class="eyebrow">ჩვენს შესახებ</span>
+                <h2>„სტილის სივრცე" — ქობულეთის გული</h2>
+                <p>ჩვენი ისტორია დაიწყო ერთი მარტივი იდეით: შეგვექმნა სივრცე ქობულეთში, სადაც მოდის მოყვარულები იპოვნიდნენ თანამედროვე, ხარისხიან და ხელმისაწვდომ ტანსაცმელს.</p>
+                <p>დღეს, სტილის სივრცე გთავაზობთ ბრენდულ კოლექციებს — adidas, Levi's, Zara. ჩვენთან წარმოდგენილია ქალის, კაცის და ბიჭის ხაზი.</p>
+                <p>ჩვენი მთავარი ღირებულება მომხმარებელთან მეგობრული დამოკიდებულება და განახლებადი კოლექციებია.</p>
+                <div class="stats-row" id="stats-container">
+                    <div class="stat-item"><h3 data-target="200">0</h3><p>+ პროდუქტი</p></div>
+                    <div class="stat-item"><h3 data-target="5">0</h3><p>+ ბრენდი</p></div>
+                    <div class="stat-item"><h3 data-target="3">0</h3><p>სეზონი</p></div>
+                    <div class="stat-item"><h3 data-target="100">0</h3><p>% განახლება</p></div>
+                </div>
+                <button class="btn btn--primary" onclick="openPurchasePanel()" style="margin-top:var(--sp-4)">მაღაზიაში სტუმრობა</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+        <div class="container">
+            <header class="section-header reveal">
+                <span class="eyebrow">შეფასებები</span>
+                <h2>რას ამბობენ ჩვენზე</h2>
+            </header>
+            <div class="test-grid reveal">
+                <article class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p class="test-quote">"საუკეთესო არჩევანი ქობულეთში. ძალიან კმაყოფილი ვარ შეძენილი კაბით და მომსახურებით."</p>
+                    <div class="test-author">
+                        <div class="test-avatar">ნ</div>
+                        <div><span class="test-name">ნინო მ.</span><span class="test-meta"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> დადასტურებული</span></div>
+                    </div>
+                </article>
+                <article class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p class="test-quote">"ბავშვებისთვის ყოველთვის აქ ვყიდულობ ტანსაცმელს. ხარისხი იდეალურია და ფასებიც მისაღები."</p>
+                    <div class="test-author">
+                        <div class="test-avatar">თ</div>
+                        <div><span class="test-name">თეონა დ.</span><span class="test-meta"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> დადასტურებული</span></div>
+                    </div>
+                </article>
+                <article class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p class="test-quote">"ლევისის ორიგინალი პოლო ვიყიდე — ხარისხი და ფასი ოპტიმალურია. ნამდვილად გირჩევ!"</p>
+                    <div class="test-author">
+                        <div class="test-avatar">გ</div>
+                        <div><span class="test-name">გიორგი ვ.</span><span class="test-meta"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> დადასტურებული</span></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM GALLERY -->
+    <section class="section container">
+        <header class="section-header reveal">
+            <span class="eyebrow">#სტილისსივრცე</span>
+            <h2>გამოიწერე ინსტაგრამი</h2>
+        </header>
+        <div class="gallery-grid reveal">
+            <a href="#" class="gallery-item"><img src="ქალის ტანსაცმელი/ქალის კაბები/ქალის კაბები (6).jpg" loading="lazy" alt="Instagram სტილი" onerror="this.src='https://picsum.photos/300/300?random=30'"><div class="gallery-overlay"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 234</div></a>
+            <a href="#" class="gallery-item"><img src="ქალის ტანსაცმელი/ქალის ორეულები/qalis oreulebi (5).jpg" loading="lazy" alt="Instagram სტილი" onerror="this.src='https://picsum.photos/300/300?random=31'"><div class="gallery-overlay"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 189</div></a>
+            <a href="#" class="gallery-item"><img src="სპორტული კოლექცია/სპორტიულის ორეულები/სპორტიულის ორეულები (2).jpg" loading="lazy" alt="Instagram სტილი" onerror="this.src='https://picsum.photos/300/300?random=32'"><div class="gallery-overlay"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 451</div></a>
+            <a href="#" class="gallery-item"><img src="ქალის ფეხსაცმელი/ზარას ქუსლიანები (1).jpg" loading="lazy" alt="Instagram სტილი" onerror="this.src='https://picsum.photos/300/300?random=33'"><div class="gallery-overlay"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 312</div></a>
+        </div>
+        <div class="gallery-cta reveal">
+            <a href="https://instagram.com/stilissivrce" target="_blank" rel="noopener" class="btn btn--ghost-gold">@stilissivrce · გამოგვყვეთ</a>
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER -->
+    <div class="contact-footer-wrap" id="contact">
+        <div class="container">
+            <section class="section" style="padding-bottom:0">
+                <header class="section-header reveal">
+                    <span class="eyebrow">კონტაქტი</span>
+                    <h2>დაგვიკავშირდით</h2>
+                    <p>მზად ვართ გიპასუხოთ ნებისმიერ კითხვაზე.</p>
+                </header>
+                <div class="contact-grid reveal">
+                    <div style="width:100%">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <svg class="icon icon--stroke" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <span>ქობულეთი,<br>ბათუმის ქ. 24</span>
+                            </div>
+                            <div class="info-item">
+                                <svg class="icon icon--stroke" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <span>+995 555 12 34 56<br>ყოველდღე</span>
+                            </div>
+                            <div class="info-item">
+                                <svg class="icon icon--stroke" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <span>info@stilissivrce.ge<br>სწრაფი პასუხი</span>
+                            </div>
+                            <div class="info-item">
+                                <svg class="icon icon--stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>ორშ–შაბ: 10:00–21:00<br>კვ: 11:00–20:00</span>
+                            </div>
+                        </div>
+                        <div class="map-wrap">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11915.006560416922!2d41.81234477209774!3d41.81938221808465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406757577583a151%3A0xe54d39c0f991f868!2sKobuleti!5e0!3m2!1ska!2sge!4v1700000000000!5m2!1ska!2sge" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="სტილის სივრცე — ქართა"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer reveal">
+                <div class="footer-watermark" aria-hidden="true">STYLE</div>
+                <div class="footer-grid">
+                    <div>
+                        <a href="#" class="logo" style="margin-bottom:var(--sp-4);display:inline-flex">
+                            <span class="logo__mark">სს</span>
+                            <span class="logo__text">სტილის სივრცე</span>
+                        </a>
+                        <p style="color:var(--text-secondary);font-size:var(--text-sm)">ქობულეთის მოდის სივრცე. შექმნილია თქვენი უნიკალური სტილისთვის.</p>
+                    </div>
+                    <div>
+                        <h4 class="footer-col__title">ნავიგაცია</h4>
+                        <div class="footer-links">
+                            <a href="#">მთავარი</a>
+                            <a href="#categories">კატეგორიები</a>
+                            <a href="#products">სრული კოლექცია</a>
+                            <a href="#about">ჩვენს შესახებ</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="footer-col__title">გამოგვყვეთ</h4>
+                        <div class="social-row">
+                            <a href="https://instagram.com/stilissivrce" target="_blank" rel="noopener" class="social-link instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram</a>
+                            <a href="#" class="social-link facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
+                            <a href="https://wa.me/995555123456" target="_blank" rel="noopener" class="social-link whatsapp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg> WhatsApp</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="footer-col__title">საკონტაქტო</h4>
+                        <div class="footer-links">
+                            <span>ბათუმის ქ. 24, ქობულეთი</span>
+                            <a href="tel:+995555123456">+995 555 12 34 56</a>
+                            <a href="mailto:info@stilissivrce.ge">info@stilissivrce.ge</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span class="copyright">© 2026 სტილის სივრცე · ყველა უფლება დაცულია</span>
+                    <span class="agency">Powered by <strong>OSG AGENCY</strong></span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</main>
+
+<!-- OVERLAY -->
+<div class="overlay" id="main-overlay"></div>
+
+<!-- FILTER SHEET -->
+<div class="sheet" id="filter-sheet" role="dialog" aria-modal="true" aria-labelledby="filter-title">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">
+        <h3 class="sheet-title" id="filter-title">ფილტრი</h3>
+        <button class="sheet-close" onclick="closeSheets()" aria-label="დახურვა"><svg class="icon icon--stroke" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="pm-section">
+        <span class="pm-label">კატეგორია</span>
+        <div class="filter-chips" id="mobile-cat-chips">
+            <button class="filter-chip is-active" onclick="setMobileFilter('cat','all',this)">ყველა</button>
+            <button class="filter-chip" onclick="setMobileFilter('cat','ქალის კაბები',this)">ქალის კაბები</button>
+            <button class="filter-chip" onclick="setMobileFilter('cat','ქალის ორეულები',this)">ქალის ორეულები</button>
+            <button class="filter-chip" onclick="setMobileFilter('cat','ქალის მაისურები',this)">ქალის მაისურები</button>
+            <button class="filter-chip" onclick="setMobileFilter('cat','ქალის შარვლები',this)">ქალის შარვლები</button>
+            <button class="filter-chip" onclick="setMobileFilter('cat','ქალის ფეხსაცმელი',this)">ქალის ფეხსაცმელი</button>
+            <button class="filter-chip" onclick="setMobileFilter('cat','ბიჭის მაისურები',this)">ბიჭის მაისურები</button>
+            <button class="filter-chip" onclick="setMobileFilter('cat','სპორტიულის ორეულები',this)">სპორტული</button>
+        </div>
+    </div>
+    <div class="pm-section">
+        <span class="pm-label">ფილტრი</span>
+        <div class="filter-chips" id="mobile-sort-chips">
+            <button class="filter-chip is-active" onclick="setMobileSort('default',this)">ნაგულისხმევი</button>
+            <button class="filter-chip" onclick="setMobileSort('price-asc',this)">ფასი ↑</button>
+            <button class="filter-chip" onclick="setMobileSort('price-desc',this)">ფასი ↓</button>
+            <button class="filter-chip" onclick="setMobileSort('new',this)">ახალი</button>
+            <button class="filter-chip" onclick="setMobileSort('sale',this)">ფასდაკლება</button>
+        </div>
+    </div>
+    <button class="btn btn--primary btn--full" style="margin-top:auto" onclick="applyMobileFilters()">შედეგების ნახვა</button>
+</div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="sheet sheet--product" id="product-modal" role="dialog" aria-modal="true">
+    <div class="sheet-handle"></div>
+    <div style="position:absolute;top:var(--sp-4);right:var(--sp-4);z-index:10">
+        <button class="sheet-close" onclick="closeSheets()" aria-label="დახურვა"><svg class="icon icon--stroke" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="product-modal-content" id="pm-content"></div>
+</div>
+
+<!-- PURCHASE OPTIONS SHEET -->
+<div class="sheet" id="purchase-sheet" role="dialog" aria-modal="true" aria-labelledby="purchase-title">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">
+        <div>
+            <h3 class="sheet-title" id="purchase-title">შეარჩიე შეძენის გზა</h3>
+            <p style="font-size:var(--text-xs);color:var(--text-secondary)">დაგვიკავშირდით — დაგეხმარებით</p>
+        </div>
+        <button class="sheet-close" onclick="closeSheets()" aria-label="დახურვა"><svg class="icon icon--stroke" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="purchase-options">
+        <button class="po-btn" onclick="triggerContact('whatsapp')">
+            <div class="po-icon whatsapp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></div>
+            <div class="po-content"><span class="po-title">WhatsApp</span><span class="po-desc">სწრაფი პასუხი · 10:00–21:00</span></div>
+            <span class="po-arrow">გაგზავნა →</span>
+        </button>
+        <button class="po-btn" onclick="triggerContact('instagram')">
+            <div class="po-icon instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            <div class="po-content"><span class="po-title">Instagram DM</span><span class="po-desc">@stilissivrce</span></div>
+            <span class="po-arrow">მიწერა →</span>
+        </button>
+        <button class="po-btn" onclick="triggerContact('facebook')">
+            <div class="po-icon facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
+            <div class="po-content"><span class="po-title">Facebook</span><span class="po-desc">სტილის სივრცე</span></div>
+            <span class="po-arrow">მიწერა →</span>
+        </button>
+        <button class="po-btn" onclick="triggerContact('phone')">
+            <div class="po-icon phone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="po-content"><span class="po-title">დარეკვა</span><span class="po-desc">ქობულეთი · +995 555 12 34 56</span></div>
+        </button>
+    </div>
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-cta-bar" id="mobile-cta">
+    <a href="https://wa.me/995555123456" target="_blank" rel="noopener" class="btn btn--ghost btn-icon" aria-label="WhatsApp">
+        <svg class="icon" viewBox="0 0 24 24" style="fill:#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+    <button class="btn btn--primary" onclick="openPurchasePanel()">შეძენა / კონტაქტი</button>
+</div>
+
+<script>
+const PRODUCTS = [
+    { id:101, name:"ქალის კაბა (1)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:89, oldPrice:129, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(1).jpeg", sizes:["XS","S","M","L"], colors:["#FFC0CB"], inStock:true, isNew:true, isSale:true, description:"ელეგანტური ქალის კაბა." },
+    { id:102, name:"ქალის კაბა (2)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:95, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(2).jpeg", sizes:["S","M","L"], colors:["#8B0000"], inStock:true, isNew:false, isSale:false, description:"ქალის გრძელი კაბა." },
+    { id:103, name:"ქალის კაბა (3)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:110, oldPrice:145, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(3).jpeg", sizes:["XS","S","M"], colors:["#fff"], inStock:true, isNew:false, isSale:true, description:"საღამოს კაბა." },
+    { id:104, name:"ქალის კაბა (4)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:80, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(4).jpeg", sizes:["S","M","L","XL"], colors:["#000"], inStock:true, isNew:true, isSale:false, description:"შავი ქალის კაბა." },
+    { id:105, name:"ქალის კაბა (5)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:75, oldPrice:100, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(5).jpeg", sizes:["S","M"], colors:["#FFC0CB","#fff","#000"], inStock:true, isNew:false, isSale:true, description:"ფერადი კაბა." },
+    { id:106, name:"ქალის კაბა (6)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:99, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(6).jpeg", sizes:["XS","S","M","L"], colors:["#DC143C"], inStock:true, isNew:true, isSale:false, description:"წითელი კაბა." },
+    { id:107, name:"ქალის კაბა (7)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:120, oldPrice:160, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(7).jpeg", sizes:["S","M","L"], colors:["#fff"], inStock:true, isNew:false, isSale:true, description:"თეთრი ქალის კაბა." },
+    { id:108, name:"ქალის კაბა (8)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:85, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(8).jpeg", sizes:["XS","S","M","L"], colors:["#DC143C","#000"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:109, name:"ქალის კაბა (9)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:105, oldPrice:135, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(9).jpeg", sizes:["S","M"], colors:["#8B0000"], inStock:true, isNew:true, isSale:true, description:"ელეგანტური კაბა." },
+    { id:110, name:"ქალის კაბა (10)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:90, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(10).jpeg", sizes:["XS","S","M","L"], colors:["#fff"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:111, name:"ქალის კაბა (11)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:78, oldPrice:98, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(11).jpeg", sizes:["S","M","L"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:true, description:"ღია ლურჯი კაბა." },
+    { id:112, name:"ქალის კაბა (12)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:88, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(12).jpeg", sizes:["XS","S","M"], colors:["#fff","#000"], inStock:true, isNew:true, isSale:false, description:"ქალის კაბა." },
+    { id:113, name:"ქალის კაბა (13)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(13).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:114, name:"ქალის კაბა (14)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(14).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:115, name:"ქალის კაბა (15)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(15).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:116, name:"ქალის კაბა (16)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(16).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:117, name:"ქალის კაბა (17)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(17).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:118, name:"ქალის კაბა (18)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(18).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:119, name:"ქალის კაბა (19)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(19).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:120, name:"ქალის კაბა (20)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(20).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:121, name:"ქალის კაბა (21)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(21).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:122, name:"ქალის კაბა (22)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(22).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:123, name:"ქალის კაბა (23)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(23).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:124, name:"ქალის კაბა (24)", brand:"სტილის სივრცე", category:"ქალის კაბები", price:92, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-კაბები/ქალის-კაბები-(24).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:false, description:"ქალის კაბა." },
+    { id:201, name:"ქალის ორეული (1)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:160, oldPrice:210, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(1).jpeg", sizes:["XS","S","M"], colors:["#4B0082","#DC143C"], inStock:true, isNew:false, isSale:true, description:"ქალის ორეული — პიჯაკი + შარვალი." },
+    { id:202, name:"ქალის ორეული (2)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:145, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(2).jpeg", sizes:["S","M","L"], colors:["#DC143C","#000"], inStock:true, isNew:true, isSale:false, description:"წითელი ქალის ორეული." },
+    { id:203, name:"ქალის ორეული (3)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:155, oldPrice:195, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(3).jpeg", sizes:["XS","S","M"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:true, description:"ღია ლურჯი ორეული." },
+    { id:204, name:"ქალის ორეული (4)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:170, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(4).jpeg", sizes:["S","M","L"], colors:["#000"], inStock:true, isNew:true, isSale:false, description:"შავი ქალის ორეული." },
+    { id:205, name:"ქალის ორეული (5)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:150, oldPrice:185, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(5).jpeg", sizes:["XS","S","M","L"], colors:["#1A3A6A"], inStock:true, isNew:false, isSale:true, description:"მუქი ლურჯი ორეული." },
+    { id:206, name:"ქალის ორეული (6)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:165, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(6).jpeg", sizes:["S","M","L","XL"], colors:["#1A3A6A","#fff"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:207, name:"ქალის ორეული (7)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:198, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(7).jpeg", sizes:["S","M","L"], colors:["#FFC0CB","#fff"], inStock:true, isNew:true, isSale:true, description:"ვარდისფერი ორეული." },
+    { id:208, name:"ქალის ორეული (8)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(8).jpeg", sizes:["S","M","L"], colors:["#FFC0CB"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:209, name:"ქალის ორეული (9)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(9).jpeg", sizes:["S","M","L"], colors:["#fff"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:210, name:"ქალის ორეული (10)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(10).jpeg", sizes:["S","M","L"], colors:["#fff"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:211, name:"ქალის ორეული (11)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(11).jpeg", sizes:["S","M","L"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:212, name:"ქალის ორეული (12)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(12).jpeg", sizes:["S","M","L"], colors:["#fff"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:213, name:"ქალის ორეული (13)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(13).jpeg", sizes:["S","M","L"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:214, name:"ქალის ორეული (14)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(14).jpeg", sizes:["S","M","L"], colors:["#DC143C"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:215, name:"ქალის ორეული (15)", brand:"სტილის სივრცე", category:"ქალის ორეულები", price:158, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ორეულები/qalis-oreulebi-(15).jpeg", sizes:["S","M","L"], colors:["#FFC0CB"], inStock:true, isNew:false, isSale:false, description:"ქალის ორეული." },
+    { id:301, name:"ქალის მაისური (1)", brand:"სტილის სივრცე", category:"ქალის მაისურები", price:45, oldPrice:65, image:"ქალის-ტანსაცმელი/ქალის-მაისურები/ქალის-მაისურები-(1).jpeg", sizes:["XS","S","M","L","XL"], colors:["#FFD700","#87CEEB","#000"], inStock:true, isNew:false, isSale:true, description:"ქალის ფერადი მაისური." },
+    { id:302, name:"ქალის მაისური (2)", brand:"სტილის სივრცე", category:"ქალის მაისურები", price:48, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-მაისურები/ქალის-მაისურები-(2).jpeg", sizes:["S","M","L"], colors:["#fff"], inStock:true, isNew:true, isSale:false, description:"გულის ნახაზიანი მაისური." },
+    { id:303, name:"ქალის მაისური (3)", brand:"სტილის სივრცე", category:"ქალის მაისურები", price:50, oldPrice:68, image:"ქალის-ტანსაცმელი/ქალის-მაისურები/ქალის-მაისურები-(3).jpeg", sizes:["XS","S","M","L"], colors:["#DC143C"], inStock:true, isNew:false, isSale:true, description:"წითელი ქალის მაისური." },
+    { id:304, name:"ქალის მაისური (4)", brand:"სტილის სივრცე", category:"ქალის მაისურები", price:42, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-მაისურები/ქალის-მაისურები-(4).jpeg", sizes:["S","M","L","XL"], colors:["#fff"], inStock:true, isNew:true, isSale:false, description:"თეთრი ქალის მაისური." },
+    { id:305, name:"ქალის მაისური (5)", brand:"სტილის სივრცე", category:"ქალის მაისურები", price:46, oldPrice:60, image:"ქალის-ტანსაცმელი/ქალის-მაისურები/ქალის-მაისურები-(5).jpeg", sizes:["XS","S","M"], colors:["#DC143C"], inStock:true, isNew:false, isSale:true, description:"ქალის მაისური." },
+    { id:401, name:"ქალის შარვალი (1)", brand:"სტილის სივრცე", category:"ქალის შარვლები", price:85, oldPrice:110, image:"ქალის-ტანსაცმელი/ქალის-ჯინსის-შარვლები/ქალის-შარვლები-(1).jpeg", sizes:["XS","S","M","L"], colors:["#D2B48C","#000"], inStock:true, isNew:false, isSale:true, description:"ფართო ქალის შარვალი." },
+    { id:402, name:"ქალის შარვალი (2)", brand:"სტილის სივრცე", category:"ქალის შარვლები", price:90, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ჯინსის-შარვლები/ქალის-შარვლები-(2).jpeg", sizes:["S","M","L","XL"], colors:["#1A1A1A"], inStock:true, isNew:true, isSale:false, description:"შავი ქალის შარვალი." },
+    { id:403, name:"ქალის შარვალი (3)", brand:"სტილის სივრცე", category:"ქალის შარვლები", price:88, oldPrice:115, image:"ქალის-ტანსაცმელი/ქალის-ჯინსის-შარვლები/ქალის-შარვლები-(3).jpeg", sizes:["XS","S","M"], colors:["#000"], inStock:true, isNew:false, isSale:true, description:"შავი ქალის შარვალი." },
+    { id:404, name:"ქალის შარვალი (4)", brand:"სტილის სივრცე", category:"ქალის შარვლები", price:78, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ჯინსის-შარვლები/ქალის-შარვლები-(4).jpeg", sizes:["S","M","L"], colors:["#A9A9A9"], inStock:true, isNew:false, isSale:false, description:"ნაცრისფერი ქალის შარვალი." },
+    { id:405, name:"ქალის შარვალი (5)", brand:"სტილის სივრცე", category:"ქალის შარვლები", price:82, oldPrice:105, image:"ქალის-ტანსაცმელი/ქალის-ჯინსის-შარვლები/ქალის-შარვლები-(5).jpeg", sizes:["XS","S","M","L"], colors:["#4169E1"], inStock:true, isNew:true, isSale:true, description:"ჯინსის ქალის შარვალი." },
+    { id:501, name:"ქალის ქვედაბოლო (1)", brand:"სტილის სივრცე", category:"ქალის კვედა ბოლოები", price:65, oldPrice:85, image:"ქალის-ტანსაცმელი/ქალის-ქვედაბოლოები/ქალის-ქვედაბოლოები-(1).jpeg", sizes:["XS","S","M","L"], colors:["#D3D3D3","#D2B48C","#FFC0CB"], inStock:true, isNew:false, isSale:true, description:"ქვედაბოლო ქალის." },
+    { id:502, name:"ქალის ქვედაბოლო (2)", brand:"სტილის სივრცე", category:"ქალის კვედა ბოლოები", price:70, oldPrice:null, image:"ქალის-ტანსაცმელი/ქალის-ქვედაბოლოები/ქალის-ქვედაბოლოები-(2).jpeg", sizes:["S","M","L"], colors:["#87CEEB","#FFC0CB","#DC143C"], inStock:true, isNew:true, isSale:false, description:"ფერადი ქვედაბოლო." },
+    { id:601, name:"გოგოს ტოპი (1)", brand:"სტილის სივრცე", category:"გოგოს ტოპები", price:35, oldPrice:50, image:"ქალის-ტანსაცმელი/გოგოს-ტოპები/გოგოს-ტოპები-(1).jpeg", sizes:["XS","S","M"], colors:["#DC143C","#000"], inStock:true, isNew:false, isSale:true, description:"ვარდისფერი/წითელი ტოპი გოგოებისთვის." },
+    { id:602, name:"გოგოს ტოპი (2)", brand:"სტილის სივრცე", category:"გოგოს ტოპები", price:38, oldPrice:null, image:"ქალის-ტანსაცმელი/გოგოს-ტოპები/გოგოს-ტოპები-(2).jpeg", sizes:["XS","S","M"], colors:["#DC143C"], inStock:true, isNew:true, isSale:false, description:"გოგოს ტოპი." },
+    { id:603, name:"გოგოს ტოპი (3)", brand:"სტილის სივრცე", category:"გოგოს ტოპები", price:40, oldPrice:55, image:"ქალის-ტანსაცმელი/გოგოს-ტოპები/გოგოს-ტოპები-(3).jpeg", sizes:["XS","S","M","L"], colors:["#FFC0CB","#000"], inStock:true, isNew:false, isSale:true, description:"გოგოს ტოპი საქართველოდან." },
+    { id:701, name:"ქალის ფეხსაცმელი (1)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:199, oldPrice:249, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(1).jpeg", sizes:["36","37","38","39","40"], colors:["#000","#fff"], inStock:true, isNew:false, isSale:true, description:"ქალის ფეხსაცმელი." },
+    { id:702, name:"ქალის ფეხსაცმელი (2)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:199, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(2).jpeg", sizes:["36","37","38","39","40"], colors:["#000","#fff"], inStock:true, isNew:true, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:703, name:"ქალის ფეხსაცმელი (3)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:155, oldPrice:195, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(3).jpeg", sizes:["36","37","38","39"], colors:["#4169E1"], inStock:true, isNew:false, isSale:true, description:"ქალის ფეხსაცმელი." },
+    { id:704, name:"ქალის ფეხსაცმელი (4)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:155, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(4).jpeg", sizes:["36","37","38","39"], colors:["#808080"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:705, name:"ქალის ფეხსაცმელი (5)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:150, oldPrice:185, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(5).jpeg", sizes:["37","38","39","40"], colors:["#808080"], inStock:true, isNew:true, isSale:true, description:"ქალის ფეხსაცმელი." },
+    { id:706, name:"ქალის ფეხსაცმელი (6)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:150, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(6).jpeg", sizes:["36","37","38","39","40"], colors:["#4169E1"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:707, name:"ქალის ფეხსაცმელი (7)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:125, oldPrice:160, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(7).jpeg", sizes:["36","37","38","39"], colors:["#D2B48C","#000"], inStock:true, isNew:true, isSale:true, description:"ქალის ფეხსაცმელი." },
+    { id:708, name:"ქალის ფეხსაცმელი (8)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:130, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(8).jpeg", sizes:["36","37","38","39","40"], colors:["#D2B48C"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:709, name:"ქალის ფეხსაცმელი (9)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:118, oldPrice:148, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(9).jpeg", sizes:["36","37","38"], colors:["#D2B48C"], inStock:true, isNew:false, isSale:true, description:"ქალის ფეხსაცმელი." },
+    { id:710, name:"ქალის ფეხსაცმელი (10)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:118, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(10).jpeg", sizes:["36","37","38","39"], colors:["#FFD700","#D2B48C"], inStock:true, isNew:true, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:711, name:"ქალის ფეხსაცმელი (11)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:122, oldPrice:155, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(11).jpeg", sizes:["36","37","38","39"], colors:["#000"], inStock:true, isNew:false, isSale:true, description:"ქალის ფეხსაცმელი." },
+    { id:712, name:"ქალის ფეხსაცმელი (12)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:122, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(12).jpeg", sizes:["36","37","38","39"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:713, name:"ქალის ფეხსაცმელი (13)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:122, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(13).jpeg", sizes:["36","37","38","39"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:714, name:"ქალის ფეხსაცმელი (14)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:122, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(14).jpeg", sizes:["36","37","38","39"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:715, name:"ქალის ფეხსაცმელი (15)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:122, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(15).jpeg", sizes:["36","37","38","39"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:716, name:"ქალის ფეხსაცმელი (16)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:122, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(16).jpeg", sizes:["36","37","38","39"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:717, name:"ქალის ფეხსაცმელი (17)", brand:"სტილის სივრცე", category:"ქალის ფეხსაცმელი", price:122, oldPrice:null, image:"ქალის-ფეხსაცმელი/ქალის-ფეხსაცმელი-(17).jpeg", sizes:["36","37","38","39"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ქალის ფეხსაცმელი." },
+    { id:801, name:"Lacoste Green Polo", brand:"LACOSTE", category:"Levi's-ის მაისურები", price:120, oldPrice:155, image:"მამაკაცის-ბიჭის-ტანსაცმელი/Levi's-ის-მაისურები/lacoste-green-polo.jpeg", sizes:["M","L","XL","XXL"], colors:["#228B22"], inStock:true, isNew:false, isSale:true, description:"Lacoste მწვანე პოლო მაისური." },
+    { id:802, name:"Levi's Black Polo", brand:"LEVI'S", category:"Levi's-ის მაისურები", price:115, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/Levi's-ის-მაისურები/levis-black-polo.jpeg", sizes:["M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:true, isSale:false, description:"ლევისის შავი პოლო." },
+    { id:803, name:"Levi's White Polo", brand:"LEVI'S", category:"Levi's-ის მაისურები", price:115, oldPrice:148, image:"მამაკაცის-ბიჭის-ტანსაცმელი/Levi's-ის-მაისურები/levis-white-polo.jpeg", sizes:["M","L","XL","XXL"], colors:["#fff"], inStock:true, isNew:false, isSale:true, description:"ლევისის თეთრი პოლო." },
+    { id:902, name:"ბიჭის მაისური (2)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(2).jpeg", sizes:["S","M","L","XL"], colors:["#fff","#000"], inStock:true, isNew:true, isSale:false, description:"ბიჭის კლასიკური მაისური." },
+    { id:903, name:"ბიჭის მაისური (3)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:52, oldPrice:70, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(3).jpeg", sizes:["M","L","XL"], colors:["#fff"], inStock:true, isNew:false, isSale:true, description:"ბიჭის თეთრი მაისური." },
+    { id:904, name:"ბიჭის მაისური (4)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:60, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(4).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:true, isSale:false, description:"ბიჭის მაისური." },
+    { id:905, name:"ბიჭის მაისური (5)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:54, oldPrice:72, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(5).jpeg", sizes:["M","L","XL"], colors:["#005500"], inStock:true, isNew:false, isSale:true, description:"ბიჭის მუქი მწვანე მაისური." },
+    { id:906, name:"ბიჭის მაისური (6)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:56, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(6).jpeg", sizes:["S","M","L","XL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:907, name:"ბიჭის მაისური (7)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:62, oldPrice:80, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(7).jpeg", sizes:["M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:true, isSale:true, description:"ბიჭის პრემიუმ მაისური." },
+    { id:908, name:"ბიჭის მაისური (8)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(8).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#fff","#000","#8B0000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:909, name:"ბიჭის მაისური (9)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(9).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:910, name:"ბიჭის მაისური (10)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(10).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#4169E1"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:911, name:"ბიჭის მაისური (11)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(11).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:912, name:"ბიჭის მაისური (12)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(12).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:913, name:"ბიჭის მაისური (13)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(13).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:914, name:"ბიჭის მაისური (14)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(14).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#fff"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:915, name:"ბიჭის მაისური (15)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(15).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#fff"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:916, name:"ბიჭის მაისური (16)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(16).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:917, name:"ბიჭის მაისური (17)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(17).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:918, name:"ბიჭის მაისური (18)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(18).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:919, name:"ბიჭის მაისური (19)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(19).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#8B4513"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:920, name:"ბიჭის მაისური (20)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(20).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#DC143C"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:921, name:"ბიჭის მაისური (21)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(21).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:922, name:"ბიჭის მაისური (22)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(22).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#DC143C"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:923, name:"ბიჭის მაისური (23)", brand:"სტილის სივრცე", category:"ბიჭის მაისურები", price:58, oldPrice:null, image:"მამაკაცის-ბიჭის-ტანსაცმელი/ბიჭის-მაისურები/ბიჭის-მაისურები-(23).jpeg", sizes:["S","M","L","XL","XXL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"ბიჭის მაისური." },
+    { id:1001, name:"ბიჭის Adidas ბოტასი", brand:"ADIDAS", category:"ბიჭის ადიდასის ბოტასები", price:180, oldPrice:225, image:"სპორტული-კოლექცია/ბიჭის-ადიდასის-ბოტასები/ბიჭის-ადიდასის-ბოტასი.jpeg", sizes:["40","41","42","43","44","45"], colors:["#4169E1","#fff"], inStock:true, isNew:false, isSale:true, description:"ბიჭის Adidas სპორტული ბოტასი." },
+    { id:1101, name:"სპორტული ორეული (1)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:140, oldPrice:180, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(1).jpeg", sizes:["S","M","L","XL"], colors:["#4B0082","#DC143C"], inStock:true, isNew:false, isSale:true, description:"სპორტული ორეული." },
+    { id:1102, name:"სპორტული ორეული (2)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:145, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(2).jpeg", sizes:["XS","S","M","L"], colors:["#FFC0CB","#DC143C","#000"], inStock:true, isNew:true, isSale:false, description:"სპორტული ორეული." },
+    { id:1103, name:"სპორტული ორეული (3)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:138, oldPrice:175, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(3).jpeg", sizes:["S","M","L","XL"], colors:["#87CEEB"], inStock:true, isNew:false, isSale:true, description:"ღია ლურჯი სპორტული ორეული." },
+    { id:1104, name:"სპორტული ორეული (4)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:135, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(4).jpeg", sizes:["S","M","L"], colors:["#000","#FFD700"], inStock:true, isNew:false, isSale:false, description:"სპორტული ორეული." },
+    { id:1105, name:"სპორტული ორეული (5)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:142, oldPrice:178, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(5).jpeg", sizes:["XS","S","M","L","XL"], colors:["#708090","#000"], inStock:true, isNew:true, isSale:true, description:"სპორტული ორეული." },
+    { id:1106, name:"სპორტული ორეული (6)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:142, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(6).jpeg", sizes:["XS","S","M","L","XL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"სპორტული ორეული." },
+    { id:1107, name:"სპორტული ორეული (7)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:142, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(7).jpeg", sizes:["XS","S","M","L","XL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"სპორტული ორეული." },
+    { id:1108, name:"სპორტული ორეული (8)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:142, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(8).jpeg", sizes:["XS","S","M","L","XL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"სპორტული ორეული." },
+    { id:1109, name:"სპორტული ორეული (9)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:142, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(9).jpeg", sizes:["XS","S","M","L","XL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"სპორტული ორეული." },
+    { id:1110, name:"სპორტული ორეული (10)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:142, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(10).jpeg", sizes:["XS","S","M","L","XL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"სპორტული ორეული." },
+    { id:1111, name:"სპორტული ორეული (11)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:142, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(11).jpeg", sizes:["XS","S","M","L","XL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"სპორტული ორეული." },
+    { id:1112, name:"სპორტული ორეული (12)", brand:"სტილის სივრცე", category:"სპორტიულის ორეულები", price:142, oldPrice:null, image:"სპორტული-კოლექცია/სპორტიულის-ორეულები/სპორტიულის-ორეულები-(12).jpeg", sizes:["XS","S","M","L","XL"], colors:["#000"], inStock:true, isNew:false, isSale:false, description:"სპორტული ორეული." },
+];
+let currentProducts=[...PRODUCTS];let visibleCount=8;let selectedProduct=null;let mobileSortVal='default';
+const ThemeManager=(()=>{const btn=document.getElementById('theme-toggle');const meta=document.getElementById('meta-theme-color');const html=document.documentElement;const set=t=>{html.setAttribute('data-theme',t);localStorage.setItem('theme',t);meta.content=t==='dark'?'#1A1A1A':'#FFFFFF';};const init=()=>{const saved=localStorage.getItem('theme');const prefers=window.matchMedia('(prefers-color-scheme: dark)').matches;set(saved||(prefers?'dark':'light'));btn.addEventListener('click',()=>set(html.getAttribute('data-theme')==='dark'?'light':'dark'));};return{init};})();
+const LayoutManager=(()=>{const header=document.getElementById('header');const menuToggle=document.getElementById('menu-toggle');const mobileCta=document.getElementById('mobile-cta');const mobileMenu=document.getElementById('mobile-menu');const hero=document.getElementById('hero');const html=document.documentElement;const init=()=>{menuToggle.addEventListener('click',()=>{const open=html.classList.toggle('menu-open');document.body.style.overflow=open?'hidden':'';mobileMenu.setAttribute('aria-hidden',!open);});document.querySelectorAll('.mobile-nav__link').forEach(l=>{l.addEventListener('click',()=>{html.classList.remove('menu-open');document.body.style.overflow='';mobileMenu.setAttribute('aria-hidden','true');});});const onScroll=()=>{const y=window.scrollY;const heroH=hero.offsetHeight;if(y>80){header.classList.add('is-scrolled');header.classList.remove('header--transparent');}else{header.classList.remove('is-scrolled');if(!html.classList.contains('menu-open'))header.classList.add('header--transparent');}mobileCta.classList.toggle('is-visible',y>heroH*0.4);};window.addEventListener('scroll',onScroll,{passive:true});onScroll();document.getElementById('main-overlay').addEventListener('click',closeSheets);};return{init};})();
+const HeroCarousel=(()=>{const slider=document.getElementById('hero-slider');const dots=document.querySelectorAll('.hero__dot');const progress=document.getElementById('hero-progress');let cur=0,timer;const go=i=>{cur=i;slider.style.transform=`translateX(-${i*33.333}%)`;dots.forEach(d=>d.classList.remove('is-active'));dots[i].classList.add('is-active');progress.classList.remove('is-animating');void progress.offsetWidth;progress.classList.add('is-animating');};const next=()=>go((cur+1)%3);const prev=()=>go((cur+2)%3);const auto=()=>{clearInterval(timer);timer=setInterval(next,5000);};const init=()=>{dots.forEach((d,i)=>d.addEventListener('click',()=>{go(i);auto();}));let sx,sy;slider.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;clearInterval(timer);},{passive:true});slider.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40)dx<0?next():prev();auto();},{passive:true});auto();};return{init};})();
+const renderProducts=()=>{const grid=document.getElementById('product-grid');const loadBtn=document.getElementById('load-more-btn');const toShow=currentProducts.slice(0,visibleCount);if(!toShow.length){grid.innerHTML=`<div class="empty-state"><p>პროდუქტი ვერ მოიძებნა.</p><button class="btn btn--ghost" onclick="resetFilters()">გასუფთავება</button></div>`;loadBtn.style.display='none';return;}grid.innerHTML=toShow.map((p,i)=>{const badge=p.isSale&&p.oldPrice?`<span class="product-badge">-${Math.round((1-p.price/p.oldPrice)*100)}%</span>`:p.isNew?`<span class="product-badge product-badge--new">ახალი</span>`:'';const oldP=p.oldPrice?`<span class="price-old">₾${p.oldPrice}</span>`:'';return`<article class="product-card" style="animation:fadeUp .45s ease both;animation-delay:${i*.04}s"><div class="product-card__image-wrap">${badge}<button class="product-wishlist" aria-label="სურვილებში დამატება" onclick="toggleWishlist(this,event)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button><img src="${p.image}" alt="${p.name}" class="product-card__img" loading="lazy" onerror="this.src='https://picsum.photos/400/533?random=${p.id}'"><button class="product-quick-view" onclick="openProduct(${p.id})">სწრაფი ნახვა</button></div><div class="product-info"><span class="product-brand">${p.brand}</span><h3 class="product-title" onclick="openProduct(${p.id})">${p.name}</h3><div class="product-price-row"><span class="price">₾${p.price}</span>${oldP}</div><button class="btn btn--ghost btn--full product-buy-btn" onclick="openPurchasePanel(${p.id})">+ შეძენა</button></div></article>`;}).join('');loadBtn.style.display=visibleCount>=currentProducts.length?'none':'inline-flex';};
+const sortProducts=(arr,sortVal)=>{const a=[...arr];if(sortVal==='price-asc')a.sort((x,y)=>x.price-y.price);else if(sortVal==='price-desc')a.sort((x,y)=>y.price-x.price);else if(sortVal==='new')a.sort((x,y)=>(y.isNew?1:0)-(x.isNew?1:0));else if(sortVal==='sale')a.sort((x,y)=>(y.isSale?1:0)-(x.isSale?1:0));return a;};
+const filterProducts=()=>{const search=document.getElementById('search-input').value.toLowerCase().trim();const cat=document.getElementById('filter-category').value;const sort=document.getElementById('filter-sort').value;let filtered=PRODUCTS.filter(p=>{const mS=!search||p.name.toLowerCase().includes(search)||p.brand.toLowerCase().includes(search)||p.category.toLowerCase().includes(search);const mC=cat==='all'||p.category===cat;return mS&&mC;});currentProducts=sortProducts(filtered,sort);visibleCount=8;renderProducts();};
+window.filterByCategory=cat=>{document.getElementById('filter-category').value=cat==='all'?'all':cat;filterProducts();closeSheets();setTimeout(()=>document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'}),100);};
+window.resetFilters=()=>{document.getElementById('search-input').value='';document.getElementById('filter-category').value='all';document.getElementById('filter-sort').value='default';filterProducts();};
+window.toggleWishlist=(btn,e)=>{e.stopPropagation();btn.classList.toggle('is-active');};
+window.setMobileFilter=(type,val,btn)=>{if(type==='cat'){document.querySelectorAll('#mobile-cat-chips .filter-chip').forEach(c=>c.classList.remove('is-active'));document.getElementById('filter-category').value=val;}btn.classList.add('is-active');};
+window.setMobileSort=(val,btn)=>{mobileSortVal=val;document.querySelectorAll('#mobile-sort-chips .filter-chip').forEach(c=>c.classList.remove('is-active'));btn.classList.add('is-active');document.getElementById('filter-sort').value=val;};
+window.applyMobileFilters=()=>{filterProducts();closeSheets();setTimeout(()=>document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'}),150);};
+const initFilters=()=>{document.getElementById('search-input').addEventListener('input',filterProducts);document.getElementById('filter-category').addEventListener('change',filterProducts);document.getElementById('filter-sort').addEventListener('change',filterProducts);document.getElementById('load-more-btn').addEventListener('click',()=>{visibleCount+=8;renderProducts();});renderProducts();};
+const overlay=document.getElementById('main-overlay');const allSheets=document.querySelectorAll('.sheet');
+window.closeSheets=()=>{allSheets.forEach(s=>s.classList.remove('is-active'));overlay.classList.remove('is-active');overlay.style.zIndex='';document.getElementById('product-modal').style.zIndex='';document.getElementById('purchase-sheet').style.zIndex='';document.body.style.overflow='';};
+window.openFilterSheet=()=>{document.getElementById('filter-sheet').classList.add('is-active');overlay.classList.add('is-active');document.body.style.overflow='hidden';};
+window.openPurchasePanel=(productId=null)=>{selectedProduct=productId?PRODUCTS.find(p=>p.id===productId):null;if(document.getElementById('product-modal').classList.contains('is-active')){document.getElementById('product-modal').style.zIndex='1190';overlay.style.zIndex='1205';document.getElementById('purchase-sheet').style.zIndex='1210';}document.getElementById('purchase-sheet').classList.add('is-active');overlay.classList.add('is-active');document.body.style.overflow='hidden';};
+window.triggerContact=method=>{let text="გამარჯობა! მაინტერესებს სტილის სივრცის პროდუქცია.";if(selectedProduct)text=`გამარჯობა! მაინტერესებს: ${selectedProduct.name} · ₾${selectedProduct.price}`;if(method==='whatsapp')window.open(`https://wa.me/995555123456?text=${encodeURIComponent(text)}`,'_blank');else if(method==='instagram')window.open('https://instagram.com/stilissivrce','_blank');else if(method==='facebook')window.open('https://m.me/stilissivrce','_blank');else if(method==='phone')window.location.href='tel:+995555123456';setTimeout(closeSheets,200);};
+window.openProduct=id=>{const p=PRODUCTS.find(x=>x.id===id);if(!p)return;selectedProduct=p;const sizes=p.sizes.map((s,i)=>`<button class="size-btn ${i===0?'is-active':''}" onclick="this.parentElement.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('is-active'));this.classList.add('is-active')">${s}</button>`).join('');const colors=p.colors.map((c,i)=>`<button class="color-btn ${i===0?'is-active':''}" onclick="this.parentElement.querySelectorAll('.color-btn').forEach(b=>b.classList.remove('is-active'));this.classList.add('is-active')"><span class="color-btn-inner" style="background:${c}"></span></button>`).join('');const oldP=p.oldPrice?`<span style="text-decoration:line-through;color:var(--text-secondary);font-size:var(--text-md)">₾${p.oldPrice}</span>`:'';document.getElementById('pm-content').innerHTML=`<div class="pm-gallery"><img src="${p.image}" alt="${p.name}" onerror="this.src='https://picsum.photos/400/533?random=${p.id}'"></div><div class="pm-info"><span class="pm-brand">${p.brand}</span><h2 class="pm-title">${p.name}</h2><div class="pm-price-row"><span class="pm-price">₾${p.price}</span>${oldP}${p.inStock?'<span class="pm-status"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> მარაგშია</span>':''}</div><div class="pm-section"><span class="pm-label">ზომა</span><div class="size-selector">${sizes}</div></div><div class="pm-section"><span class="pm-label">ფერი</span><div class="color-selector">${colors}</div></div><div class="pm-section"><p class="pm-desc">${p.description}</p></div><button class="btn btn--primary btn--full" style="height:56px;font-size:16px" onclick="openPurchasePanel(${p.id})">ყიდვა / დაკავშირება</button></div>`;document.getElementById('product-modal').classList.add('is-active');overlay.classList.add('is-active');document.body.style.overflow='hidden';};
+const AnimationManager=(()=>{let statsAnimated=false;const animateStats=()=>{if(statsAnimated)return;statsAnimated=true;document.querySelectorAll('.stat-item h3').forEach(el=>{const end=parseInt(el.dataset.target);let start=null;const step=ts=>{if(!start)start=ts;const p=Math.min((ts-start)/1800,1);const ease=1-Math.pow(2,-10*p);el.textContent=Math.floor(ease*end);if(p<1)requestAnimationFrame(step);else el.textContent=end;};requestAnimationFrame(step);});};const init=()=>{const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');if(e.target.querySelector&&e.target.querySelector('#stats-container'))animateStats();obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));};return{init};})();
+document.addEventListener('DOMContentLoaded',()=>{ThemeManager.init();LayoutManager.init();HeroCarousel.init();initFilters();AnimationManager.init();});
+</script>
+</body>
+</html>
